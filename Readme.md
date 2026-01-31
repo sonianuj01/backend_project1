@@ -30,21 +30,20 @@ This project focuses on scalable backend architecture, secure authentication, an
 
 ---
 
-## 📂 Project Structure
-
+backend_project1/
 ├── public/
-│ └── temp/ # Temporary public files
+│   └── temp/                # Temporary public files
 ├── src/
-│ ├── controllers/ # Request handlers / business logic
-│ ├── db/ # Database connection setup
-│ ├── middlewares/ # Auth & error handling middlewares
-│ ├── models/ # Mongoose schemas
-│ ├── routes/ # API route definitions
-│ ├── utils/ # Helper & utility functions
-│ ├── app.js # Express app configuration
-│ ├── constants.js # App-wide constants
-│ └── index.js # Application entry point
-├── .env.sample 
+│   ├── controllers/         # Request handlers / business logic
+│   ├── db/                  # Database connection setup
+│   ├── middlewares/         # Auth & error handling middlewares
+│   ├── models/              # Mongoose schemas
+│   ├── routes/              # API route definitions
+│   ├── utils/               # Helper & utility functions
+│   ├── app.js               # Express app configuration
+│   ├── constants.js         # App-wide constants
+│   └── index.js             # Application entry point
+├── .env.sample              # Environment variables template
 ├── .gitignore
 ├── .prettierrc
 ├── .prettierignore
