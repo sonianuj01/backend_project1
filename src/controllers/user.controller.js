@@ -9,8 +9,8 @@ import mongoose from "mongoose";
 const generateAccessAndRefereshTokens = async (userId) => {
     try {
         const user = await User.findById(userId);
-        const accessToken = user.generateAccessToken();
-        const refreshToken = user.generateRefreshToken();
+         const accessToken = await user.generateAccessToken();
+        const refreshToken = await user.generateRefreshToken();
 
         user.refreshToken = refreshToken;
         await user.save({ validateBeforeSave: false });
@@ -103,7 +103,6 @@ const loginUser = asyncHandler(async (req, res) => {
     //send cookie
 
     const { email, username, password } = req.body;
-    console.log(email);
 
     if (!username && !email) {
         throw new ApiError(400, "username or email is required");
