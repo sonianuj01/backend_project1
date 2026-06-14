@@ -9,7 +9,7 @@ import mongoose from "mongoose";
 const generateAccessAndRefereshTokens = async (userId) => {
     try {
         const user = await User.findById(userId);
-         const accessToken = await user.generateAccessToken();
+        const accessToken = await user.generateAccessToken();
         const refreshToken = await user.generateRefreshToken();
 
         user.refreshToken = refreshToken;
@@ -68,9 +68,9 @@ const registerUser = asyncHandler(async (req, res) => {
     const avatar = await uploadOnCloudinary(avatarLocalPath);
     const coverImage = await uploadOnCloudinary(coverImageLocalPath);
 
-    if (!avatar) {
-        throw new ApiError(400, "Avatar file is required");
-    }
+    // if (!avatar) {
+    //     throw new ApiError(400, "Avatar file is required");
+    // }
 
     const user = await User.create({
         fullName,
