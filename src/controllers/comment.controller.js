@@ -53,7 +53,8 @@ const addComment = asyncHandler(async (req, res) => {
 
 const updateComment = asyncHandler(async (req, res) => {
     // TODO: update a comment
-    const {content,commentId} = req.body
+    const {content} = req.body
+    const {commentId} = req.params
 
     if(!content || !commentId){
         throw new ApiError(500,"content & commentId, both fields are req!")
